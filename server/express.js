@@ -1,4 +1,5 @@
 import express from 'express'
+import path from 'path'
 import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
 import compress from 'compression'
@@ -11,6 +12,7 @@ import authRoutes from './routes/auth.routes'
 
 import devBundle from './devBundle'
 
+const CURRENT_WORKING_DIR = process.cwd()
 const app = express()
 devBundle.compile(app)
 
@@ -22,6 +24,8 @@ app.use(compress())
 app.use(helmet())
 // enable CORS - Cross Origin Resource Sharing
 app.use(cors())
+
+app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
 
 // app.get('/', (req, res)=> {
 //     res.status(200).send(Template())
