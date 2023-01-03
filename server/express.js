@@ -6,6 +6,7 @@ import cors from 'cors'
 import helmet from 'helmet'
 import Template from './../template'
 import userRoutes from './routes/user.routes'
+import authRoutes from './routes/auth.routes'
 
 const app = express()
 /*
@@ -26,5 +27,6 @@ app.use(cors())
 // })
 
 app.use('/', userRoutes)
+app.use('/', authRoutes)
 
 export default app
