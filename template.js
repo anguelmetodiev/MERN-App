@@ -7,7 +7,7 @@ export default ({markup, css}) => {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
         >
-        <title>MERN Skeleton</title>
+        <title>Welcome to my MERN App</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <style>
@@ -24,3 +24,9 @@ export default ({markup, css}) => {
       </body>
     </html>`
 }
+
+/*
+template.js - root template file to render html with react components
+server gets a request to the root url then html will be rendered.
+root contains the react component.
+*/
